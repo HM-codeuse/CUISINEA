@@ -9,15 +9,15 @@
 </head>
 <body>
     <h2>Connexion</h2>
-    <form method="POST" action="validation_connexion.php">
+    <form method="POST" action="validation_connexion.php" class="m-3 p-3">
         
-        <label for="email">Email :</label>
+        <label for="email" class="my-3">Email :</label>
         <input type="text" id="email" name="email" required><br>
 
-        <label for="password">Mot de passe:</label>
+        <label for="password" class="my-3">Mot de passe:</label>
         <input type="password" id="password" name="password" required><br>
 
-        <input type="submit" value="Se connecter">
+        <input type="submit" value="Se connecter" class="center">
     </form>
 </body>
 </html>

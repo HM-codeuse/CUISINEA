@@ -17,11 +17,10 @@
     $checkStmt->execute(['email' => $email]);
     $count = $checkStmt->fetchColumn();
 
-    if ($count > 0) {
-        // Utilisateur déjà enregistré, afficher un message d'erreur ou effectuer une autre action
-        echo 'Cet utilisateur est déjà enregistré.';
-        echo '<br>';
-        echo '<a href="inscription.php" class="btn btn-primary">Retour à la page d\'inscription</a>';
+    if ($count > 0) { ?>
+        <p>Cet utilisateur est déjà enregistré.</p>
+        <br>
+        <a href="authentification/inscription.php" class="btn btn-primary">Retour à la page d'inscription</a> <?php
     } else {
         // Insérer les données dans la base de données
         $insertSql = "INSERT INTO users (last_name, first_name, email, password) VALUES (:last_name, :first_name, :email, :password)";

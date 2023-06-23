@@ -1,14 +1,11 @@
 <?php
 session_start();
 
-// Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
     // Utilisateur non connecté, rediriger vers la page de connexion
     header('Location: connexion.php');
     exit();
 }
-
-// L'utilisateur est connecté,
 
 require_once('templates/header.php');
 require_once('lib/tools.php');

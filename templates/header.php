@@ -4,6 +4,17 @@ require_once('lib/pdo.php');
 
 $currentPage = basename($_SERVER['SCRIPT_NAME']);
 
+// Vérifier si l'utilisateur est connecté
+if (isset($_SESSION['user_id'])) {
+  $user_id = $_SESSION['user_id'];
+
+  // Effectuer une requête pour récupérer les informations de l'utilisateur à partir de la base de données
+  $sql = "SELECT * FROM users WHERE id = :user_id";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute(['user_id' => $user_id]);
+  $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+}
 
  
 
@@ -43,26 +54,19 @@ $currentPage = basename($_SERVER['SCRIPT_NAME']);
       </ul>
 
       <div class="col-md-3 text-end">
-      <a href="connexion.php" class="btn btn-outline-primary me-2">Se connecter</a>
-      <a href="inscription.php" class="btn btn-primary">S'inscrire</a>
-      </div>
+      <?php
+// ...
 
-      <div class="col-md-3 text-end">
-        <?php
-        // Afficher le statut de connexion de l'utilisateur et le bouton de déconnexion
-        if (isset($_SESSION['user_id'])) {
-            $user_id = $_SESSION['user_id'];
-            // Ici, vous pouvez effectuer une requête pour récupérer les informations de l'utilisateur à partir de la base de données
-            // Par exemple, $user = fetchUserFromDatabase($user_id);
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id']; ?>
+    <span class="nav-link">Connecté en tant que <?= $user['last_name'] ?> <?= $user['first_name'] ?> </span>
+    <a href="deconnexion.php" class="btn btn-primary">Déconnexion</a>
+<?php } else { ?>
+   
+    <a href="connexion.php" class="btn btn-outline-primary me-2">Se connecter</a>
+    <a href="inscription.php" class="btn btn-primary">S'inscrire</a>
+<?php }
+?>
 
-            // Afficher le nom de l'utilisateur ou tout autre information souhaitée
-            echo 'Connecté en tant que ' . $user->last_name . $user->first_name;
-
-            // Afficher le bouton de déconnexion
-            echo '<a href="deconnexion.php" class="btn btn-primary">Déconnexion</a>';
-        }
-        ?>
-
-
-
+    </div>
     </header>

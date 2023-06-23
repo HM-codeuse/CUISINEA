@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('templates/header.php');
 require_once('lib/tools.php');
 require_once('lib/recipe.php');

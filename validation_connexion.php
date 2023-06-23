@@ -1,5 +1,7 @@
 <?php
 require_once 'lib/pdo.php';
+session_start();
+
 
 // Récupérer les données du formulaire de connexion
 $email = $_POST['email'];
@@ -16,9 +18,8 @@ if ($user) {
     if (password_verify($password, $user['password'])) {
         // Mot de passe correct, connecter l'utilisateur
         $_SESSION['user_id'] = $user['id'];
-        // Rediriger vers la page d'accueil ou toute autre page appropriée
-        header('Location: index.php');
-        exit();
+        header('Location: ajout_modification_recette.php');
+        
     } else {
         // Mot de passe incorrect
         echo 'Mot de passe incorrect.';
@@ -28,6 +29,5 @@ if ($user) {
     echo 'Utilisateur non trouvé.';
 }
 
-// Fermer la connexion à la base de données
-$pdo = null;
+
 ?>
