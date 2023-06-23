@@ -17,7 +17,7 @@ session_start();
       </div>
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold lh-1 mb-3">Cuisinea - Recettes de cuisine</h1>
-        <p class="lead">Bienvenue sur notre site de recettes, l'endroit idéal pour explorer et découvrir de délicieuses créations culinaires. Que vous soyez un amateur passionné ou un chef expérimenté, notre collection variée de recettes saura satisfaire toutes vos envies gastronomiques. Des plats traditionnels aux saveurs exotiques, vous trouverez ici des idées pour chaque repas et chaque occasion. Laissez-vous guider par nos instructions détaillées, nos astuces pratiques et nos suggestions de variations pour donner une touche personnelle à chaque recette. Préparez-vous à émerveiller vos papilles et à épater vos proches avec des mets savoureux qui feront de chaque repas un moment spécial.</p>
+        <p class="lead">Bienvenue sur notre site de recettes, l'endroit idéal pour explorer et découvrir de délicieuses créations culinaires. Que vous soyez un amateur passionné ou un chef expérimenté, notre collection variée de recettes saura satisfaire toutes vos envies gastronomiques. Laissez-vous guider par nos instructions détaillées, nos astuces pratiques et nos suggestions de variations pour donner une touche personnelle à chaque recette. Préparez-vous à émerveiller vos papilles et à épater vos proches avec des mets savoureux qui feront de chaque repas un moment spécial.</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           <a href="recettes.php" class="btn btn-primary">Voir nos recettes</a>
         </div>
