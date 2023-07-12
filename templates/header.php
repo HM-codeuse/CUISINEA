@@ -1,6 +1,6 @@
 <?php 
-require_once('lib/config.php');
-require_once('lib/pdo.php');
+require_once 'lib/config.php';
+require_once  'lib/pdo.php';
 
 $currentPage = basename($_SERVER['SCRIPT_NAME']);
 
@@ -10,13 +10,11 @@ if (isset($_SESSION['user_id'])) {
 
   // Effectuer une requête pour récupérer les informations de l'utilisateur à partir de la base de données
   $sql = "SELECT * FROM users WHERE id = :user_id";
-  $stmt = $pdo->prepare($sql);
-  $stmt->execute(['user_id' => $user_id]);
-  $user = $stmt->fetch(PDO::FETCH_ASSOC);
+  $query = $pdo->prepare($sql);
+  $query->execute(['user_id' => $user_id]);
+  $user = $query->fetch(PDO::FETCH_ASSOC);
 
-}
-
- 
+} 
 
 ?>
 
@@ -60,7 +58,7 @@ if (isset($_SESSION['user_id'])) {
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id']; ?>
     <span class="nav-link">Connecté en tant que <?= $user['last_name'] ?> <?= $user['first_name'] ?> </span>
-    <a href="deconnexion.php" class="btn btn-primary">Déconnexion</a>
+    <a href= "deconnexion.php" class="btn btn-primary">Déconnexion</a>
 <?php } else { ?>
    
     <a href="connexion.php" class="btn btn-outline-primary me-2">Se connecter</a>

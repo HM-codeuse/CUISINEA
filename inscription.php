@@ -17,7 +17,7 @@
         <input type="text" id="first_name" name="first_name" required><br>
 
         <label for="password" class="my-3">Mot de passe: </label>
-        <input type="text" id="password" name="password" required><br>
+        <input type="password" id="password" name="password" required><br>
 
         <label for="email" class="my-3">Email:</label>
         <input type="email" id="email" name="email" required><br>

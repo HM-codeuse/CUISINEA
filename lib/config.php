@@ -1,8 +1,12 @@
 <?php
+
+//Chemins et limites
   define('_RECIPES_IMG_PATH_', 'uploads/recipes/');
   define('_ASSETS_IMG_PATH_', 'assets/images/');
   define('_HOME_RECIPES_LIMIT_', 6);
+  define('_AUTH_FILES_PATH_', 'authentification/');
 
+//Menu
   $mainMenu = [
     'index.php' => 'Accueil', 
     'recettes.php' => 'Nos recettes',

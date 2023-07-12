@@ -20,7 +20,7 @@
     if ($count > 0) { ?>
         <p>Cet utilisateur est déjà enregistré.</p>
         <br>
-        <a href="authentification/inscription.php" class="btn btn-primary">Retour à la page d'inscription</a> <?php
+        <a href="connexion.php" class="btn btn-primary">Se connecter</a> <?php
     } else {
         // Insérer les données dans la base de données
         $insertSql = "INSERT INTO users (last_name, first_name, email, password) VALUES (:last_name, :first_name, :email, :password)";
